@@ -1,0 +1,85 @@
+<!-- BASELINE PAGE: intentionally contains common accessibility problems for the audit.
+     Problems are listed in the report (findings F1 to F15). -->
+<html>
+<head>
+  <title>Blog</title>
+  <style>
+    body { font-family: Arial, sans-serif; font-size: 12px; color: #222; margin: 20px; }
+    a { color: #7fb3e6; }
+    a:focus, button:focus, input:focus, div[role] { outline: none; }
+    .meta { color: #999; }
+    .nav div { display: inline-block; margin-right: 20px; color: #7fb3e6; cursor: pointer; }
+    .filter { display: inline-block; padding: 4px 10px; border: 1px solid #ccc; margin-right: 6px; cursor: pointer; }
+    .filter.on { background: #7fb3e6; color: #fff; }
+    .post { border-bottom: 1px solid #ddd; padding: 12px 0; }
+    .box { background: #f4f4f4; padding: 10px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div onclick="location.href='#'">Home</div>
+    <div onclick="location.href='#'">Technology</div>
+    <div onclick="location.href='#'">Learning</div>
+    <div onclick="location.href='#'">Careers</div>
+    <div onclick="location.href='#'">About</div>
+  </div>
+
+  <div class="title"><h4>The Field Notes Journal</h4></div>
+  <h1>Latest</h1>
+
+  <div>
+    <input type="text" placeholder="Search articles">
+    <div class="filter on" onclick="setFilter(this)">All</div>
+    <div class="filter" onclick="setFilter(this)">Technology</div>
+    <div class="filter" onclick="setFilter(this)">Learning</div>
+    <div class="filter" onclick="setFilter(this)">Careers</div>
+  </div>
+
+  <div class="post">
+    <h4>Why the four WCAG principles matter for every reader</h4>
+    <div class="meta">12 October 2026 | Technology</div>
+    <p>Accessibility guidelines are built on four principles. Here is how each one shapes your design decisions.</p>
+    <svg width="400" height="100">
+      <rect x="10" y="20" width="100" height="60" fill="#dde"/>
+      <rect x="150" y="20" width="100" height="60" fill="#dde"/>
+      <rect x="290" y="20" width="100" height="60" fill="#dde"/>
+    </svg>
+    <a href="#">Click here</a>
+  </div>
+
+  <div class="post">
+    <h4>Learning to navigate websites with only a keyboard</h4>
+    <div class="meta">5 October 2026 | Learning</div>
+    <p>Tab, Shift and Tab, Enter, and Escape cover most of what you need.</p>
+    <a href="#">Read more</a>
+  </div>
+
+  <div class="post">
+    <h4>Semantic HTML: the free accessibility upgrade</h4>
+    <div class="meta">28 September 2026 | Technology</div>
+    <p>Native elements already carry meaning for assistive technology.</p>
+    <a href="#">Click here</a>
+  </div>
+
+  <div class="post">
+    <h4>Building an accessibility portfolio as a junior developer</h4>
+    <div class="meta">14 September 2026 | Careers</div>
+    <p>Employers want evidence. Learn how to document audits and measurable improvements.</p>
+    <a href="#">Read more</a>
+  </div>
+
+  <h4>Subscribe</h4>
+  <div class="box">
+    <input type="text" placeholder="Enter your email">
+    <div onclick="alert('Subscribed')" style="display:inline-block;padding:4px 10px;background:#eee;cursor:pointer;">Go</div>
+  </div>
+
+  <script>
+    function setFilter(el) {
+      var all = document.querySelectorAll('.filter');
+      for (var i = 0; i < all.length; i++) { all[i].className = 'filter'; }
+      el.className = 'filter on';
+    }
+  </script>
+</body>
+</html>
